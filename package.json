@@ -9,7 +9,8 @@
     "lint": "eslint",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test-notes": "jest NotesForm.test.tsx"
+    "test-notes": "jest NotesForm.test.tsx",
+    "test-todos": "jest TodoAndPhotoList.test.tsx"
   },
   "dependencies": {
     "next": "16.2.3",
