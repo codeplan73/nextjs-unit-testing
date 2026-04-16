@@ -25,11 +25,14 @@ const NotesForm: React.FC<NotesFormProps> = ({ addNote }) => {
         <input
           value={note}
           onChange={handleChange}
+          data-testid="note-input"
           className="p-2 rounded border m-2 bg-white text-slate-950 w-full"
-          placeholder="Enter your note here..."
+          placeholder="Enter a note"
         />
         <button
           type="submit"
+          disabled={!note.trim()}
+          data-testid="save-note-button"
           className="bg-blue-500 p-2 rounded text-white  hover:bg-blue-600 transition-colors w-full"
         >
           Save Note
@@ -43,7 +46,10 @@ const NotesList: React.FC<{ notes: string[] }> = ({ notes }) => {
   return (
     <div className="bg-white p-2 rounded shadow mt-4">
       <h2 className="text-xl font-bold mb-2 text-slate-900">Notes List</h2>
-      <ul className="space-y-2 transition-all duration-300 ease-in-out">
+      <ul
+        className="space-y-2 transition-all duration-300 ease-in-out"
+        data-testid="note-list"
+      >
         {notes.map((note, index) => (
           <li
             className="bg-slate-200 text-slate-950 p-2 rounded-sm flex justify-between items-center"
